@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marushhh</title>
+
+<style>
+body{
+    background-color: rgb(248, 146, 163);
+    text-align: center;
+    margin: 0;
+}
+
+#demande, #accepter{
+    background-color: crimson;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5%;
+}
+
+button{
+    margin: 15px;
+    padding: 10px;
+    width: 100px;
+    background-color: hotpink; 
+    border: 0; 
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button:hover{
+    background-color: pink;
+}
+
+#accepter{
+    display: none;
+}
+</style>
+
+<script>
+function confirmYes(){
+    document.getElementById("demande").style.display = "none";
+    document.getElementById("accepter").style.display = "block";
+}
+
+function moveNo(){
+    const noBtn = document.getElementById("no");
+    const maxX = window.innerWidth - noBtn.offsetWidth;
+    const maxY = window.innerHeight - noBtn.offsetHeight;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    noBtn.style.position = "absolute";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
+</script>
+</head>
+
+<body>
+
+<div id="demande">
+    <h2>WILL YOU BE MY VALENTINE 💖</h2>
+    <button id="yes" onclick="confirmYes()">YES</button>
+    <button id="no"
+        onmouseover="moveNo()" 
+        ontouchstart="moveNo()">
+        NO
+    </button>
+</div>
+
+<div id="accepter">
+    <h2>YAAAY 💕</h2>
+    <img src="istockphoto-1142683699-612x612.jpg" style="max-width:100%;">
+</div>
+
+</body>
+</html>
